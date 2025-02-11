@@ -6,7 +6,7 @@ const ImageGallery = ({ images }) => {
   return (
     <ul className={styles.gallery}>
       {images.map(image => (
-        <li key={image.id}>
+        <li key={image.id} className={styles.galleryItem}>
           <ImageCard image={image} />
         </li>
       ))}

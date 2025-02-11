@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Вирівнює елементи на протилежні сторони */
+  align-items: center; /* Вирівнює елементи по вертикалі */
+  background-color: #400bd39c;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.form {
+  display: flex;
+  gap: 10px;
+}
+.input {
+  height: 30px;
+}
+.button {
+  width: 80px;
+  border-radius: 20%;
+}

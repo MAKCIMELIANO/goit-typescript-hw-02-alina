@@ -27,7 +27,7 @@ const App = () => {
             query,
             page,
             per_page: 12,
-            client_id: 'YOUR_ACCESS_KEY',
+            client_id: 'RhbVz9-NAVUWfIj-NaY5bs_B2pXKbkVHrGI9v7YxkSs',
           },
         }
       );
