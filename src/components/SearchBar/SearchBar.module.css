@@ -6,16 +6,27 @@ header {
   background-color: #400bd39c;
   color: white;
   padding: 20px;
-  box-sizing: border-box;
+  margin-bottom: 24px;
 }
 .form {
   display: flex;
   gap: 10px;
 }
 .input {
-  height: 30px;
+  height: 100px;
+  font-size: 20px;
+  padding: 10px;
+}
+.input:focus {
+  border: 2px solid #0fd1909d;
 }
 .button {
-  width: 80px;
+  width: 100px;
   border-radius: 20%;
+  font-size: 20px;
+}
+.button:hover,
+.button:focus {
+  background-color: #71de8c;
+  font-weight: 600;
 }
