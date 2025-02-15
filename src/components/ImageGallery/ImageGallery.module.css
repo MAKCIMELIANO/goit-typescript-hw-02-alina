@@ -1,13 +1,12 @@
 .gallery {
-  margin: 20px;
   display: flex;
   flex-wrap: wrap;
-  row-gap: 10px;
-  column-gap: 10px;
+  gap: 15px;
   padding: 0 24px;
+  margin-bottom: 24px;
 }
 
 .galleryItem {
-  width: calc((100% - 3 * 10px) / 4);
-  height: 200px;
+  width: calc((100% - 3 * 15px) / 4);
+  /* height: 200px; */
 }

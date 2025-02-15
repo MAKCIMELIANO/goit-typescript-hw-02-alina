@@ -11,8 +11,12 @@ const ImageModal = ({ isOpen, onClose, image }) => {
       className={styles.modal}
       overlayClassName={styles.overlay}
     >
-      <img src={image.urls.regular} alt={image.alt_description} />
-      <button className={styles.close} onClick={onClose}>
+      <img
+        src={image.urls.regular}
+        alt={image.alt_description}
+        className={styles.modalImage}
+      />
+      <button className={styles.modalBtn} onClick={onClose}>
         Close
       </button>
     </Modal>

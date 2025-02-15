@@ -58,6 +58,10 @@ const App = () => {
   const handleImageClick = image => {
     setSelectedImage(image);
   };
+  const openModal = image => {
+    setSelectedImage(image);
+    setModalIsOpen(true);
+  };
 
   const closeModal = () => {
     setSelectedImage(null);
@@ -68,7 +72,9 @@ const App = () => {
       <SearchBar onSubmit={handleSearchSubmit} />
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}
-      {images.length > 0 && <ImageGallery images={images} />}
+      {images.length > 0 && (
+        <ImageGallery images={images} handleImageClick={openModal} />
+      )}
       {images.length > 0 && !loading && (
         <LoadMoreBtn onClick={loadMoreImages} />
       )}
