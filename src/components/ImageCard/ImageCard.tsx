@@ -3,10 +3,14 @@ import React from 'react';
 import styles from './ImageCard.module.css';
 
 interface ImageCardProps {
-  image: { id: string; urls: { small: string }; alt_description: string };
+  image: {
+    id: string;
+    urls: { small: string; regular: string };
+    alt_description: string;
+  };
   handleImageClick: (image: {
     id: string;
-    urls: { small: string };
+    urls: { small: string; regular: string };
     alt_description: string;
   }) => void;
 }
