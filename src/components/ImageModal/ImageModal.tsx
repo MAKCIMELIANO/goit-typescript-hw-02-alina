@@ -2,7 +2,22 @@ import React from 'react';
 import Modal from 'react-modal';
 import styles from './ImageModal.module.css';
 
-const ImageModal = ({ isOpen, onClose, image }) => {
+// Тип для властивостей зображення
+interface Image {
+  alt_description: string;
+  urls: {
+    regular: string;
+  };
+}
+
+// Тип для пропсів компонента ImageModal
+interface ImageModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  image: Image;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, image }) => {
   return (
     <Modal
       isOpen={isOpen}

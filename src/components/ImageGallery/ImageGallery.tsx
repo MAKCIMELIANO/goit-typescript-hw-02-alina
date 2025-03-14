@@ -1,9 +1,21 @@
+// ImageGallery.tsx
 import React from 'react';
 import ImageCard from '../ImageCard/ImageCard';
-
 import styles from './ImageGallery.module.css';
 
-const ImageGallery = ({ images, handleImageClick }) => {
+interface ImageGalleryProps {
+  images: { id: string; urls: { small: string }; alt_description: string }[];
+  handleImageClick: (image: {
+    id: string;
+    urls: { small: string };
+    alt_description: string;
+  }) => void;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({
+  images,
+  handleImageClick,
+}) => {
   return (
     <ul className={styles.gallery}>
       {images.map(image => (

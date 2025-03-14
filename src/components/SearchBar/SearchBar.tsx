@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 import { toast } from 'react-hot-toast';
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState('');
+// Тип для пропсів компонента SearchBar
+interface SearchBarProps {
+  onSubmit: (query: string) => void; // Функція, яка приймає запит на пошук як рядок
+}
 
-  const handleSubmit = e => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
+  const [query, setQuery] = useState<string>('');
+
+  // Типізація події e у функції handleSubmit
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!query) {
       toast.error('Please enter a search term!');

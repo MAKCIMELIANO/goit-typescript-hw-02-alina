@@ -8,13 +8,36 @@ import ErrorMessage from './components/ErrorMessage/ErrorMessage';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 import ImageModal from './components/ImageModal/ImageModal';
 
-const App = () => {
-  const [images, setImages] = useState([]);
-  const [query, setQuery] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [page, setPage] = useState(1);
-  const [selectedImage, setSelectedImage] = useState(null);
+// Опис типів
+interface Image {
+  id: string;
+  urls: {
+    small: string;
+    regular: string;
+  };
+  alt_description: string;
+}
+
+interface Error {
+  message: string;
+}
+
+interface AppState {
+  images: Image[];
+  query: string;
+  loading: boolean;
+  error: string | null;
+  page: number;
+  selectedImage: Image | null;
+}
+
+const App: React.FC = () => {
+  const [images, setImages] = useState<Image[]>([]);
+  const [query, setQuery] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState<number>(1);
+  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
 
   const fetchImages = async () => {
     setLoading(true);
@@ -45,7 +68,7 @@ const App = () => {
     }
   }, [query, page]);
 
-  const handleSearchSubmit = query => {
+  const handleSearchSubmit = (query: string) => {
     setQuery(query);
     setImages([]);
     setPage(1);
@@ -55,12 +78,12 @@ const App = () => {
     setPage(prevPage => prevPage + 1);
   };
 
-  const handleImageClick = image => {
+  const handleImageClick = (image: Image) => {
     setSelectedImage(image);
   };
-  const openModal = image => {
+
+  const openModal = (image: Image) => {
     setSelectedImage(image);
-    setModalIsOpen(true);
   };
 
   const closeModal = () => {
